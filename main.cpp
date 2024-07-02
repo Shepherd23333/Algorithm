@@ -8,7 +8,7 @@ int main(){
         case 0:
             binary::init();
             binary::simulate();
-            binary::print();
+            binary::final();
             break;
         case 1:
             break;
