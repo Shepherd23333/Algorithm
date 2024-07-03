@@ -1,4 +1,5 @@
 #include "binary.h"
+#include "dp.h"
 int main(){
     int mode;
     cout<<"Input the mode:";
@@ -8,11 +9,12 @@ int main(){
         case 0:
             binary::init();
             binary::simulate();
-            binary::final();
             break;
         case 1:
             break;
         case 2:
+            dp::init();
+            dp::simulate();
             break;
         case 3:
             break;

@@ -1,5 +1,5 @@
 #include "turing.h"
-namespace binary{
+namespace dp{
     void init();
     void simulate();
 };
