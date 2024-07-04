@@ -19,6 +19,7 @@ int main(){
             break;
         case 4:
             bab::init();
+            bab::simulate();
             break;
     }
     system("pause");

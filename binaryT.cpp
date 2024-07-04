@@ -2,21 +2,23 @@
 namespace binary{
     TuringMachine bst;
     void init(){
-        bst.b="-1";
+        bst.blank="-1";
         bst.states={
             "initLow","writeLow","initHigh","writeHigh","compLow","stop",
             "calMid","readMid","compMid","success","updateLow","compHigh",
             "updateHigh"
         };
         int n,x;
-        cin>>n>>x;
+        cin>>n;
         bst.tape[0].push_back(to_string(0));
         bst.tape[0].push_back(to_string(n-1));
-        bst.tape[0].push_back(to_string(x));
+        bst.tape[0].push_back("");
         for(int i=0;i<n;i++){
             cin>>x;
             bst.tape[0].push_back(to_string(x));
         }
+        cin>>x;
+        bst.tape[0][2]=to_string(x);
     }
     void simulate(){
         bst.print(0);

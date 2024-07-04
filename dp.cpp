@@ -2,7 +2,7 @@
 namespace dp{
     TuringMachine dpt;
     void init(){
-        dpt.b="0";
+        dpt.blank="0";
         dpt.states={
             "readNum","readCapacity","readWeight","readValue","writeM(i,j)",
             "readM(i,j)","readW(i)","calM(i,j)","comp","ansM(i,j)","compAnsM(i,j)",
