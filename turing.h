@@ -12,17 +12,19 @@ struct TuringMachine{
         tape.resize(t);
         pos.resize(t);
     }
-    int read(int t){
+    double read(int t){
         if(pos[t]>=tape[t].size())
-            tape[t].resize(pos[t]+2,blank);
+            tape[t].resize(pos[t]+1,blank);
         steps++;
-        return stoi(tape[t][pos[t]]);
+        return stod(tape[t][pos[t]]);
     }
-    void write(int t,int data){
+    void write(int t,double data){
         if(pos[t]>=tape[t].size())
-            tape[t].resize(pos[t]+2,blank);
+            tape[t].resize(pos[t]+1,blank);
         steps++;
-        tape[t][pos[t]]=to_string(data);
+        stringstream ss;
+        ss<<data;
+        tape[t][pos[t]]=ss.str();
     }
     void move(int t,int step){
         pos[t]+=step;
@@ -42,9 +44,6 @@ struct TuringMachine{
         cout<<"\n";
     }
     void final(){
-        for(auto t:tape)
-            while(t.back()==blank)
-                t.pop_back();
         cout<<"Final State:\nStep:"<<steps<<",Size:"<<tape[1].size()<<"\n";
         print(end);
     }
