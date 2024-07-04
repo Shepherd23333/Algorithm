@@ -28,16 +28,17 @@ struct TuringMachine{
         for(int i=0;i<3;i++){
             cout<<"Tape"<<i<<":";
             for(auto j:tape[i])
-                cout<<j<<" ";
+                cout<<j+" ";
             cout<<",pos:"<<pos[i]<<"\n";
         }
-        cout<<"State:"<<states[st]<<"\n\n";
+        cout<<"State:"+states[st]+"\n";
+        //system("pause");
+        cout<<"\n";
     }
     void final(){
         while(tape[1].back()==b)
             tape[1].pop_back();
-        cout<<"Final State:\n";
-        cout<<"Step:"<<steps<<",Size:"<<tape[1].size()<<"\n";
+        cout<<"Final State:\nStep:"<<steps<<",Size:"<<tape[1].size()<<"\n";
         print(end);
     }
 };

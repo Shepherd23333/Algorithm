@@ -1,4 +1,4 @@
-#include "binary.h"
+#include "binaryT.h"
 namespace binary{
     TuringMachine bst;
     void init(){
@@ -13,7 +13,7 @@ namespace binary{
         bst.tape[0].push_back(to_string(0));
         bst.tape[0].push_back(to_string(n-1));
         bst.tape[0].push_back(to_string(x));
-        for(int i=0;i<=n;i++){
+        for(int i=0;i<n;i++){
             cin>>x;
             bst.tape[0].push_back(to_string(x));
         }
