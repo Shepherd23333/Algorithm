@@ -41,7 +41,6 @@ struct TuringMachine{
         }
         cout<<"State:"+states[st]+"\n";
         //system("pause");
-        cout<<"\n";
     }
     void final(){
         cout<<"Final State:\nStep:"<<steps<<",Size:"<<tape[1].size()<<"\n";

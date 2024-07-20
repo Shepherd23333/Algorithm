@@ -16,8 +16,7 @@ namespace bab{
             "readW(cur+1)","readV(cur+1)","writeHeadIndex","writeHeadWeight",
             "writeHeadValue","readCurVector(i)","readHeadVector(i)",
             "writeHeadVector(cur+1)","writeLeft","writeBound","readWeight(i)",
-            "readValue(i)","writeBoundEnd",
-            "success"
+            "readValue(i)","writeBoundEnd","success"
         };
         int n,c;
         cin>>c>>n;
