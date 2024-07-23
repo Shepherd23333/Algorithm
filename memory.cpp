@@ -14,7 +14,8 @@ struct mem:public recursiveFunction{
         t.blank="-1";
         t.states={
             "readNum","readCacpacity","search","get","rangeOut","readWeight",
-            "readValue","success"
+            "readValue","writePrice","readW(i)","ansM(i,j)","compM(i,j)",
+            "success"
         };
         int n,c;
         cin>>c>>n;
@@ -41,11 +42,10 @@ struct mem:public recursiveFunction{
         print(0);
         int n=t.read(0);t.move(0,1);
         print(1);
-        int c=t.read(0),res;
+        int c=t.read(0),res,w,v,r;
         s.push({0,c});
         while(s.size()){
             dataM dt=s.pop();
-            int w,v,r;
             switch(dt.entry){
                 case 0:
                     t.moveTo(1,dt.para*(c+1)+dt.cw);
@@ -83,12 +83,27 @@ struct mem:public recursiveFunction{
                     break;
             }
         }
+        print(7);
         t.write(2,res);
-        
-        
+        t.moveTo(0,2);t.moveTo(1,c);t.move(2,1);
+        for(int i=0,x;i<n;i++){
+            print(8);
+            w=t.read(0);t.move(0,2);
+            print(9);
+            r=t.read(1);t.move(1,c+1);
+            print(10);
+            x=t.read(1);
+            if(r-x){
+                t.write(2,1);
+                t.move(1,-w);
+            }else
+                t.write(2,0);
+            t.move(2,1);
+        }
+        print(t.end=11);
         cout<<"Final State:\nStep:"<<t.steps<<"\nSize:Tape:"<<t.tape[1].size()
             <<", Stack:"<<4*s.maxSize()<<"\n";
-        print(t.end=7);
+        print(t.end);
     }
 };
 namespace memory{

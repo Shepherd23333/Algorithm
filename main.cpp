@@ -3,6 +3,7 @@
 #include "dp.h"
 #include "BAB.h"
 #include "memory.h"
+#include "backtrack.h"
 int main(){
     int mode;
     cout<<"Input the mode:";
@@ -26,6 +27,9 @@ int main(){
             break;
         case 5:
             memory::simulate();
+            break;
+        case 6:
+            back::simulate();
             break;
     }
     system("pause");
